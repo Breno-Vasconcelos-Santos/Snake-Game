@@ -1,2 +1,2 @@
 # Snake-Game
-trabalho final de LP
+Trabalho final da disciplina de Linguagem de Programação
