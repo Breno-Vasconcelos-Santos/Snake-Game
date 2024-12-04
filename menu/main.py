@@ -1,0 +1,7 @@
+from funcoesMenu import *
+
+menu()
+
+
+
+    
