@@ -7,7 +7,7 @@ def desenhar_altura(altura, largura):
         desenhar_largura(largura)
         
         # desenha as laterais da borda
-        for i in range(altura - 2):
+        for i in range(altura-2):
             print("#" + " " * (largura - 2) + "#")
         
         # desenha a parte inferior da borda
