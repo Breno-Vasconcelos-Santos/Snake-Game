@@ -4,7 +4,6 @@ import time
 #import WConio2
 #import InquirerPy
 
-#deixar isso?
 def bem_vindo():
     os.system("cls")
     print("Bem-vindo(a) ao")
