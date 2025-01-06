@@ -1,3 +1,5 @@
+import WConio2
+
 def desenhar_largura(largura):
     print("#" * largura)
 
