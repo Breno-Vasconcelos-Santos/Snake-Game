@@ -1,7 +1,7 @@
 import os
 import time
 #import cursor
-#import Wconio2
+#import WConio2
 #import InquirerPy
 
 #deixar isso?
