@@ -41,7 +41,9 @@ def menu():
             print("- Coma os X para ganhar pontos.")
             print("- Não colida com as paredes ou com o próprio corpo.\n")
         elif opcao == "3":
-            print("Ranking")
+            print("Ranking dos jogadores: ")
+            listar_ranking()
+
         #aqui usar arquivo para salvar ranking
         elif opcao == "0":
             print("Saindo do jogo. Até a próxima!")
@@ -50,3 +52,10 @@ def menu():
             print("\nOpção inválida! Tente novamente.\n")
 
 
+def listar_ranking():
+    arquivo = open('ranking.txt', 'r')
+    rankings = arquivo.readlines()
+    for r in rankings:
+        print(f"Pontos : {r}")
+
+    arquivo.close
