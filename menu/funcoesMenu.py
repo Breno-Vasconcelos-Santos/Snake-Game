@@ -55,7 +55,8 @@ def menu():
 def listar_ranking():
     arquivo = open('ranking.txt', 'r')
     rankings = arquivo.readlines()
+    count = 1
     for r in rankings:
-        print(f"Pontos : {r}")
-
+        print(f"{count}°lugar- Pontos: {r}")
+        count +=1
     arquivo.close
