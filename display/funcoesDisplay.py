@@ -1,16 +1,20 @@
-import WConio2
+import curses
 
-def desenhar_largura(largura):
-    print("#" * largura)
+def desenhar_largura(stdscr, largura):
+    stdscr.addstr("#" * largura + "\n")  # Adiciona a borda no terminal
 
-def desenhar_altura(altura, largura):
-    if altura > 2:  
-        # desenha a parte superior da borda
-        desenhar_largura(largura)
+def desenhar_altura(stdscr, altura, largura):
+    if altura > 2 and largura > 2:
+        # Parte superior da borda
+        desenhar_largura(stdscr, largura)
         
-        # desenha as laterais da borda
-        for i in range(altura-2):
-            print("#" + " " * (largura - 2) + "#")
+        # Laterais
+        for _ in range(altura - 2):
+            stdscr.addstr("#" + " " * (largura - 2) + "#\n")
         
-        # desenha a parte inferior da borda
-        desenhar_largura(largura)
+        # Parte inferior da borda
+        desenhar_largura(stdscr, largura)
+    else:
+        stdscr.addstr("Dimensões inválidas para a borda.\n")
+
+   

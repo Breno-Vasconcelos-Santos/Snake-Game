@@ -1,3 +1,3 @@
 from funcoesDisplay import *
 
-desenhar_altura(10, 60)
+desenhar_altura(20,20)
