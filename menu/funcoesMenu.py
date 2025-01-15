@@ -1,7 +1,7 @@
 import os
 import time
 #import cursor
-#import WConio2
+import WConio2
 #import InquirerPy
 
 def bem_vindo():
@@ -23,21 +23,24 @@ def bem_vindo():
 
 def menu():
     bem_vindo()
+    #ainda pensar em mudanças para as cores
+    WConio2.textcolor(WConio2.GREEN)
     while True:
         print("===== MENU =====")
         print("1 - Jogar")
         print("2 - Ver as regras do jogo")
         print("3 - Ver o ranking")
-        print("0 - Sair")
-        opcao = input("Escolha uma opção: ")
+        print("4 - Sair")
+        opcao = input("Escolha uma opcão: ")
 
         if opcao == "1":
+            WConio2.textcolor(WConio2.WHITE)
             print("Iniciando o jogo")
            #aqui iniciar jogo
             break
         elif opcao == "2":
             print("\nRegras do jogo:")
-            print("- Use as setas para movimentar a cobra.")
+            print("- Use a tecla W para se movimentar para cima, A para se movimentar para a esquerda, S para se movimentar para baixo e D para se movimentar para a direita.")
             print("- Coma os X para ganhar pontos.")
             print("- Não colida com as paredes ou com o próprio corpo.\n")
         elif opcao == "3":
@@ -45,7 +48,7 @@ def menu():
             listar_ranking()
 
         #aqui usar arquivo para salvar ranking
-        elif opcao == "0":
+        elif opcao == "4":
             print("Saindo do jogo. Até a próxima!")
             break
         else:
