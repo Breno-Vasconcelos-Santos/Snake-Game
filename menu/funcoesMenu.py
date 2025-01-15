@@ -24,8 +24,9 @@ def bem_vindo():
 def menu():
     bem_vindo()
     #ainda pensar em mudanças para as cores
-    WConio2.textcolor(WConio2.GREEN)
+    
     while True:
+        WConio2.textcolor(WConio2.WHITE)
         print("===== MENU =====")
         print("1 - Jogar")
         print("2 - Ver as regras do jogo")
@@ -34,21 +35,24 @@ def menu():
         opcao = input("Escolha uma opcão: ")
 
         if opcao == "1":
-            WConio2.textcolor(WConio2.WHITE)
+            WConio2.textcolor(WConio2.GREEN)
             print("Iniciando o jogo")
            #aqui iniciar jogo
             break
         elif opcao == "2":
+            WConio2.textcolor(WConio2.YELLOW)
             print("\nRegras do jogo:")
             print("- Use a tecla W para se movimentar para cima, A para se movimentar para a esquerda, S para se movimentar para baixo e D para se movimentar para a direita.")
             print("- Coma os X para ganhar pontos.")
             print("- Não colida com as paredes ou com o próprio corpo.\n")
         elif opcao == "3":
+            WConio2.textcolor(WConio2.CYAN)
             print("Ranking dos jogadores: ")
             listar_ranking()
 
         #aqui usar arquivo para salvar ranking
         elif opcao == "4":
+            WConio2.textcolor(WConio2.WHITE)
             print("Saindo do jogo. Até a próxima!")
             break
         else:
