@@ -1,8 +1,6 @@
 #import random
-import WConio2
 import curses
 
-altura , largura=50
 cobra = [(10, 10), (9, 10), (8, 10)] #valores testes
 #parte comentada pois ainda terá modificações a fazer
 def gerar_comida():
@@ -12,14 +10,11 @@ def gerar_comida():
     pass
 
 def gerar_cobra(stdscr, cobra):
-    for i, (x, y) in enumerate(cobra): 
+    for i, (y, x) in enumerate(cobra): 
         stdscr.move(y, x)
         if i == 0:
             stdscr.addstr("o")  
         else:
             stdscr.addstr("=")  
     stdscr.refresh()
-
-
-
 #controle de teclas
