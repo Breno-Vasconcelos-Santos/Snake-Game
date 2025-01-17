@@ -8,8 +8,8 @@ def main(stdscr):
     stdscr.timeout(100)
     largura, altura = 30, 15
     cobra = [(10, 10), (9, 10), (8, 10)]
-    direcao = 454 #terminal não estava reconhecendo as teclas, tive que definir assim para reconhece-las, depois ver se tem como melhorar
-    opostos = {450: 456, 456: 450, 452: 454, 454: 452}
+    direcao = 100 #terminal não estava reconhecendo as teclas, tive que definir assim para reconhece-las, depois ver se tem como melhorar
+    opostos = {119: 115, 115: 119, 97: 100, 100: 97}
 
     #desenho da borda do jogo
     desenhar_altura(stdscr, altura, largura)
@@ -20,13 +20,13 @@ def main(stdscr):
             direcao = key
 
         y, x = cobra[0]
-        if direcao == 456:  #verifica se é o comando de direção para baixo
+        if direcao == 115:  #verifica se é o comando de direção para baixo
             y += 1
-        elif direcao == 450:  #verifica se é o comando de direção para cima
+        elif direcao == 119:  #verifica se é o comando de direção para cima
             y -= 1
-        elif direcao == 452:  #verifica se é o comando de direção para esquerda
+        elif direcao == 97:  #verifica se é o comando de direção para esquerda
             x -= 1
-        elif direcao == 454:  #verifica se é o comando de direção para direita
+        elif direcao == 100:  #verifica se é o comando de direção para direita
             x += 1
 
         nova_cabeca = (y, x) #nova posição da cabeça
