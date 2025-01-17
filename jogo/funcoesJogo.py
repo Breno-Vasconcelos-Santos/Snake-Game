@@ -9,16 +9,6 @@ def gerar_comida():
     #return comida_x, comida_y
     pass
 
-def gerar_cobra(stdscr, cobra):
-    for i, (y, x) in enumerate(cobra): 
-        stdscr.move(y, x)
-        if i == 0:
-            stdscr.addstr("O")  
-        else:
-            stdscr.addstr("x")  
-    stdscr.refresh()
-#controle de teclas
-
 def gerar_cobra(stdscr, cobra, direcao):
     for i, (y, x) in enumerate(cobra): 
         stdscr.move(y, x)
