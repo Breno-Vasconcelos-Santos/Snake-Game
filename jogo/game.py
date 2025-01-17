@@ -40,7 +40,7 @@ def main(stdscr):
         
         stdscr.clear() #limpa a tela
         desenhar_altura(stdscr, altura, largura) #redesenho da borda
-        gerar_cobra(stdscr, cobra) #redesenho da cobra
+        gerar_cobra(stdscr, cobra, direcao) #redesenho da cobra
         
         time.sleep(0.1)
 
