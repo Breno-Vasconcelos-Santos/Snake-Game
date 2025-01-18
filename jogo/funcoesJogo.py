@@ -9,6 +9,11 @@ def gerar_comida(altura, largura, cobra):
         comida_x = random.randint(1, largura - 2)
         if (comida_y, comida_x) not in cobra:
             return comida_y, comida_x
+        
+def desenhar_comida(stdscr, comida):
+    y, x = comida
+    stdscr.move(y, x)
+    stdscr.addstr("Ó")
 
 def gerar_cobra(stdscr, cobra, direcao):
     for i, (y, x) in enumerate(cobra): 
