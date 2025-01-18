@@ -3,11 +3,12 @@ import curses
 
 cobra = [(10, 10), (9, 10), (8, 10)] #valores testes
 #parte comentada pois ainda terá modificações a fazer
-def gerar_comida():
-    #comida_x=random.randrange(0, largura) 
-    #comida_y=random.randrange(0, altura)
-    #return comida_x, comida_y
-    pass
+def gerar_comida(altura, largura, cobra):
+    while True:
+        comida_y = random.randint(1, altura - 2)
+        comida_x = random.randint(1, largura - 2)
+        if (comida_y, comida_x) not in cobra:
+            return comida_y, comida_x
 
 def gerar_cobra(stdscr, cobra, direcao):
     for i, (y, x) in enumerate(cobra): 
