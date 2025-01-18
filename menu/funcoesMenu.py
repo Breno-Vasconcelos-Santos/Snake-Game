@@ -1,8 +1,6 @@
 import os
 import time
-#import cursor
 import WConio2
-#import InquirerPy
 
 def bem_vindo():
     os.system("cls")
@@ -21,10 +19,41 @@ def bem_vindo():
     time.sleep(2)
     os.system("cls")
 
+
+
+
+# Função para listar o ranking
+def listar_ranking():
+    try:
+        with open('ranking.txt', 'r') as arquivo:
+            rankings = arquivo.readlines()
+            if not rankings:
+                print("Ainda não há registros no ranking.\n")
+                return
+           
+    except FileNotFoundError:
+        print("Ainda não há registros no ranking.\n")
+
+
+
+# Função para salvar o ranking
+def salvar_ranking(nome, pontos):
+    # Carregar dados existentes
+    jogadores = {}
+    try:
+        with open('ranking.txt', 'r') as arquivo:
+            for linha in arquivo:
+                n, p = linha.strip().split(';')
+                jogadores[n] = int(p)
+    except FileNotFoundError:
+        pass
+
+            
+
+# Função do menu principal
 def menu():
     bem_vindo()
-    #ainda pensar em mudanças para as cores
-    
+    nome_jogador = input("Digite seu nome para começar: ").strip()
     while True:
         WConio2.textcolor(WConio2.WHITE)
         print("===== MENU =====")
@@ -32,12 +61,15 @@ def menu():
         print("2 - Ver as regras do jogo")
         print("3 - Ver o ranking")
         print("4 - Sair")
-        opcao = input("Escolha uma opcão: ")
+        opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
             WConio2.textcolor(WConio2.GREEN)
-            print("Iniciando o jogo")
-           #aqui iniciar jogo
+            print("Iniciando o jogo...")
+            # Simulação de pontuação
+            pontos = int(input("Digite a pontuação do jogador (para teste): "))
+            salvar_ranking(nome_jogador, pontos)
+            print(f"Parabéns, {nome_jogador}! Sua pontuação de {pontos} foi salva no ranking.\n")
             break
         elif opcao == "2":
             WConio2.textcolor(WConio2.YELLOW)
@@ -47,23 +79,10 @@ def menu():
             print("- Não colida com as paredes ou com o próprio corpo.\n")
         elif opcao == "3":
             WConio2.textcolor(WConio2.CYAN)
-            print("Ranking dos jogadores: ")
             listar_ranking()
-
-        #aqui usar arquivo para salvar ranking
         elif opcao == "4":
             WConio2.textcolor(WConio2.WHITE)
             print("Saindo do jogo. Até a próxima!")
             break
         else:
             print("\nOpção inválida! Tente novamente.\n")
-
-
-def listar_ranking():
-    arquivo = open('ranking.txt', 'r')
-    rankings = arquivo.readlines()
-    count = 1
-    for r in rankings:
-        print(f"{count}°lugar- Pontos: {r}")
-        count +=1
-    arquivo.close
