@@ -14,6 +14,12 @@ def main(stdscr):
     #desenho da borda do jogo
     desenhar_altura(stdscr, altura, largura)
 
+    #gera a comida
+    gerar_comida(altura, largura, cobra)
+
+    #desenha a comida na tela
+    desenhar_comida(stdscr, comida)
+
     while True:
         key = stdscr.getch() #comando de entrada do usuario
         if key in opostos and opostos[direcao] != key:
