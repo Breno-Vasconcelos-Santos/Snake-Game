@@ -12,6 +12,7 @@ def bem_vindo():
         print(".", end="", flush=True)
         time.sleep(0.5)
     print("\n")
+    WConio2.textcolor(WConio2.RED)
     print(""" ######  ##  ##    #####   ##  ##    # ####            #####    #####   ##   ##   # ####
 #######  ### ##   #######  ## ##    #######           #######  #######  ### ###  #######
 ##       ######   ##   ##  ####     ##                ##       ##   ##  #######  ##
@@ -76,6 +77,7 @@ def salvar_ranking(nome, pontos):
 # Função do menu principal
 def menu():
     bem_vindo()
+    WConio2.textcolor(WConio2.WHITE)
     nome_jogador = input("Digite seu nome para começar: ").strip()
     while True:
         WConio2.textcolor(WConio2.WHITE)
