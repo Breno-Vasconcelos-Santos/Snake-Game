@@ -20,7 +20,7 @@ def bem_vindo():
      ##  ## ###   #######  ## ##     #                ##   ##  #######  ## # ##   #
 #######  ##  ##   ##   ##  ##  ##   #######           #######  ##   ##  ##   ##  #######
 ######   ##  ##   ##   ##  ##   ##   ######            #####   ##   ##  ##   ##   ######""")
-    time.sleep(2)
+    time.sleep(3)
     os.system("cls")
 
 
@@ -78,10 +78,10 @@ def salvar_ranking(nome, pontos):
 def menu():
     bem_vindo()
     WConio2.textcolor(WConio2.WHITE)
-    nome_jogador = input("Digite seu nome para começar: ").strip()
+    nome_jogador = input("Digite seu nome para começar: ").strip().capitalize()
     while True:
         WConio2.textcolor(WConio2.WHITE)
-        print("===== MENU =====")
+        print("\n========== MENU ==========")
         print("1 - Jogar")
         print("2 - Ver as regras do jogo")
         print("3 - Ver o ranking")
@@ -90,11 +90,11 @@ def menu():
 
         if opcao == "1":
             os.system('cls')
-            WConio2.textcolor(WConio2.GREEN)
+            WConio2.textcolor(WConio2.RED)
             
             pontos = curses.wrapper(main)  
             salvar_ranking(nome_jogador, pontos)  # Salva o ranking após o jogo
-            print(f"Game Over, {nome_jogador}! Sua pontuação de {pontos} foi salva no ranking.\n")
+            print(f"Game Over, {nome_jogador}! Sua pontuação de {pontos} foi salva no ranking.")
             True
 
         elif opcao == "2":
@@ -102,15 +102,15 @@ def menu():
             print("\nRegras do jogo:")
             print("- Use a tecla W para se movimentar para cima, A para se movimentar para a esquerda, S para se movimentar para baixo e D para se movimentar para a direita.")
             print("- Coma os Ó para ganhar pontos.")
-            print("- Não colida com as paredes ou com o próprio corpo.\n")
+            print("- Não colida com as paredes ou com o próprio corpo.")
         elif opcao == "3":
             WConio2.textcolor(WConio2.CYAN)
             listar_ranking()
         elif opcao == "4":
             WConio2.textcolor(WConio2.WHITE)
-            print("Saindo do jogo. Até a próxima!")
+            print("\nSaindo do jogo. Até a próxima!")
             break
         else:
-            print("\nOpção inválida! Tente novamente.\n")
+            print("\nOpção inválida! Tente novamente.")
 
         
