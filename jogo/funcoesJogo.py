@@ -41,7 +41,7 @@ def main(stdscr):
     stdscr.timeout(100)
     largura, altura = 30, 15
     cobra = [(10, 10), (9, 10), (8, 10)]
-    direcao = 100 #terminal não estava reconhecendo as teclas, tive que definir assim para reconhece-las, depois ver se tem como melhorar
+    direcao = 100
     opostos = {119: 115, 115: 119, 97: 100, 100: 97}
 
     comida = gerar_comida(altura, largura, cobra)
